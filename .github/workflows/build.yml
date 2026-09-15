@@ -23,6 +23,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ZaynixXios-Dylib
-             path: "**/ZaynixXios.dylib"
-             
+        path: obj/ZaynixXios.dylib
         
