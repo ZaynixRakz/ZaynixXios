@@ -19,9 +19,11 @@ jobs:
       run: |
         make package
         
-    - name: Upload Finished Dylib
+    - name: Upload Finished Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: ZaynixXios-Dylib
-        path: .theos/obj/*.dylib
-        
+        name: ZaynixXios-Package
+        path: |
+          .theos/obj/*
+          packages/*
+          
