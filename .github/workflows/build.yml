@@ -1,0 +1,27 @@
+name: Build ZaynixXios
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build iOS Tweak
+    runs-on: macos-13
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Theos Compiler
+      uses: Randomblock1/theos-action@v1
+
+    - name: Compile to Dylib
+      run: |
+        make package
+        
+    - name: Upload Finished Dylib
+      uses: actions/upload-artifact@v4
+      with:
+        name: ZaynixXios-Dylib
+        path: .theos/obj/ZaynixXios.dylib
+        
